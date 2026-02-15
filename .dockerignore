@@ -1,0 +1,12 @@
+.git
+data/*
+tools/*/models/*
+__pycache__/
+*.pyc
+*.pkl
+*.pt
+*.ckpt
+*.pth
+*.zip
+*.tar
+*.tar.gz
