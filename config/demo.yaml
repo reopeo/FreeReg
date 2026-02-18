@@ -14,7 +14,7 @@ meta:
 zoe:
   zoe_type: 'zoedepth'
   config_version: None
-  zoe_ck: './tools/zoe/models/ZoeD_M12_N.pt'
+  zoe_ck: './tools/zoe/models/ZoeD_M12_NK.pt'
 
 feat:
   cn:
@@ -32,7 +32,7 @@ feat:
       cn_ckpt: 'control_v11f1p_sd15_depth_ft.pth'
 
   fcgf:
-    pth: './tools/fcgf/models/fcgf_indoor.pth'
+    pth: './tools/fcgf/models/fcgf_outdoor.pth'
     vs: 0.025
     trans_thres: 0.5
 
