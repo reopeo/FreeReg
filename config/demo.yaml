@@ -12,7 +12,7 @@ meta:
   densefunc: 'fast'
 
 zoe:
-  zoe_type: 'zoedepth'
+  zoe_type: 'zoedepth_nk'
   config_version: None
   zoe_ck: './tools/zoe/models/ZoeD_M12_NK.pt'
 
