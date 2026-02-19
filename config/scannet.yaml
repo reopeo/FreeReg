@@ -25,6 +25,7 @@ feat:
     seed: 12345
     prompt: 'a photo of a room, furniture, household items'
     step: 150
+    ddim_steps: 5
     check_layers: [0,4,6]
     pca_dim: 128
     top_crop: -1

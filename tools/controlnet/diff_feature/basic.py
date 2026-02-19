@@ -19,7 +19,8 @@ class capture():
                  sd_ckpt = 'v1-5-pruned.ckpt', 
                  cn_ckpt = 'control_v11f1p_sd15_depth.pth', 
                  seed = -1, 
-                 t = 150) -> None:
+                 t = 150,
+                 steps = 20) -> None:
         # basic
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         # diffusion related
@@ -33,7 +34,7 @@ class capture():
         self.strength = 1.0
         self.eta = 1.0
         self.uncond_scale = 5.0
-        self.steps = 20
+        self.steps = steps
         self.seed = seed
         self.guess_mode = False
         self.only_mid_control = False

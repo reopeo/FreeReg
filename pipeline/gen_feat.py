@@ -45,6 +45,7 @@ class pipeline_feat():
                                      vs = cfg.feat.fcgf.vs)
         # load_model = False if not update_df_feat else True # GPU memory friendly
         load_model=True
+        ddim_steps = cfg.feat.cn.get('ddim_steps', 20)
         self.control = control_extractor(load_model=load_model,
                                          seed=cfg.feat.cn.seed, 
                                          t = cfg.feat.cn.step, 
@@ -52,7 +53,8 @@ class pipeline_feat():
                                          yaml=cfg.feat.cn.ckpts.yaml,
                                          sd_ckpt=cfg.feat.cn.ckpts.sd_ckpt,
                                          cn_ckpt=cfg.feat.cn.ckpts.cn_ckpt,
-                                         prompt=cfg.feat.cn.prompt)
+                                         prompt=cfg.feat.cn.prompt,
+                                         steps=ddim_steps)
         self.convertor = dpt_3d_convert()
         self.nn_searcher = nn_match(nn_max_n=-1)
         self.update_df_feat = update_df_feat

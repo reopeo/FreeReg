@@ -24,13 +24,15 @@ class control_extractor(Null_model):
                  yaml = 'control_v11f1p_sd15_depth.yaml', 
                  sd_ckpt = 'v1-5-pruned.ckpt', 
                  cn_ckpt = 'control_v11f1p_sd15_depth.pth', 
-                 prompt = 'a photo of a room and furniture') -> None:
+                 prompt = 'a photo of a room and furniture',
+                 steps = 20) -> None:
         super().__init__()
         if load_model:
             self.prompt = prompt
             self.capturer = capture(seed = seed, basic = basic, 
                                     yaml = yaml, sd_ckpt = sd_ckpt,
-                                    cn_ckpt = cn_ckpt, t = t)
+                                    cn_ckpt = cn_ckpt, t = t,
+                                    steps = steps)
             self.img_processing = img_processor(self.capturer)
             self.dpt_processing = dpt_processor(self.capturer)
 

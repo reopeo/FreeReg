@@ -1,7 +1,7 @@
 name: 'kitti'
 
 meta:
-  base: './data/kitti_dc/test'
+  base: './data/kitti_dc'
   feat_base: './tale_features'
   pair_type: 'seq'
   overlap_pair: 0.3  # no use
@@ -25,9 +25,10 @@ feat:
     seed: 12345
     prompt: 'a vehicle camera photo of street view, trees, cars, people, house, road, sky'
     step: 150
+    ddim_steps: 5
     check_layers: [0,4,6]
     pca_dim: 128
-    top_crop: 150
+    top_crop: 200
     ckpts:
       basic: './tools/controlnet/models'
       yaml: 'control_v11f1p_sd15_depth.yaml'
